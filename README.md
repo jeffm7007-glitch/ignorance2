@@ -154,6 +154,9 @@ llms.txt v2 specification — described, with sources, at
   were matched, at what score, under which thresholds.
 - **Publish the recipe.** The moat was never secrecy. The moat is whether
   you can actually do it.
+- **The open challenge.** Criticism is welcome; disproof is executable.
+  Anyone who tries to prove the harness wrong has to run it first — and
+  running it is the point.
 
 ## Production note
 
