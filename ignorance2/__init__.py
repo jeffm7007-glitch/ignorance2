@@ -22,7 +22,7 @@ Zero dependencies. Python 3.10+. MIT license.
 from .core import Claim, Fact, Verdict, ClaimResult, check, risk, evidence_score, best_evidence, split_claims, load_facts, render_report
 from .sources import init_sqlite, add_fact_sql, load_facts_sql
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = ["Claim", "Fact", "Verdict", "ClaimResult", "check", "risk",
            "evidence_score", "best_evidence", "split_claims", "load_facts",
            "render_report", "init_sqlite", "add_fact_sql", "load_facts_sql"]

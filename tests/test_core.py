@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from ignorance2 import (Claim, Fact, Verdict, check, evidence_score, risk,
                         split_claims, init_sqlite, add_fact_sql, load_facts_sql)
+from ignorance2.integrations.harness2 import Harness2Gate
 
 
 FACTS = [
@@ -97,6 +98,33 @@ class TestSQLSource(unittest.TestCase):
             conn.close()
         finally:
             os.unlink(path)
+
+
+class TestHarness2Integration(unittest.TestCase):
+    """The Google Harness2 gate: self-improvement answers to fixed truth."""
+
+    def setUp(self):
+        self.gate = Harness2Gate(("examples/facts.json",))
+
+    def test_probe_object_duck_typed(self):
+        class Probe:
+            text = "ProPlum covers 200 US cities."
+        score = self.gate.score_probe(Probe())
+        self.assertFalse(score["blocked"])
+        self.assertGreaterEqual(score["claims"], 1)
+
+    def test_blocked_probe_never_composes(self):
+        score = self.gate.score_probe("We also serve 900 cities in Europe.")
+        self.assertTrue(score["blocked"])
+
+    def test_is_better_rejects_honest_regression(self):
+        baseline = "ProPlum covers 200 US cities."
+        drifty = "We serve 200 US cities and also 900 in Europe."
+        self.assertFalse(self.gate.is_better(baseline, drifty))
+
+    def test_gate_requires_fact_layer(self):
+        with self.assertRaises(ValueError):
+            Harness2Gate(())
 
 
 if __name__ == "__main__":

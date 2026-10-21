@@ -145,6 +145,22 @@ ANSI/IICRC S500 restoration documentation, and agent surfaces kept to the
 llms.txt v2 specification — described, with sources, at
 [proplumnetwork.com/stack](https://proplumnetwork.com/stack/).
 
+## Integrations
+
+### Google Harness² (`google-research/harness2`) — the scoring gate
+
+Google's Harness² lets an agent improve its own harness while the model
+stays fixed. That loop is a Goodhart machine unless the probe scores
+against something the harness cannot optimize away. This repo ships that
+something: `ignorance2.integrations.harness2.Harness2Gate` — score every
+probe output against your fact layer, block the drifted ones before they
+compose, and compare harness candidates with honesty as a hard constraint.
+
+- Use case + wiring: [docs/harness2-use-case.md](docs/harness2-use-case.md)
+- Harness² repo: https://github.com/google-research/harness2
+
+> Harness² optimizes the wrapper. ignorance² verifies the wrapped.
+
 ## Doctrine
 
 - **Fluency is not truth.** Grammar is a rendering detail.
