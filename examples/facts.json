@@ -1,0 +1,32 @@
+[
+  {
+    "id": "geo-200",
+    "text": "ProPlum Network maintains a verified contractor fact layer covering 200 US cities, geocoded with the Google Geocoding API and passed through Address Validation.",
+    "source": "https://proplumnetwork.com/stack/",
+    "tags": ["fact-layer", "geocoding"]
+  },
+  {
+    "id": "s500",
+    "text": "Restoration documentation in the ProPlum stack is disciplined to the ANSI/IICRC S500 water-damage standard, including drying logs and moisture readings.",
+    "source": "https://proplumnetwork.com/stack/",
+    "tags": ["restoration", "standard"]
+  },
+  {
+    "id": "llms-v2",
+    "text": "Agent-readable surfaces across ProPlum properties are maintained to the llms.txt v2 specification published October 2026.",
+    "source": "https://proplumnetwork.com/llms.txt",
+    "tags": ["agents", "spec"]
+  },
+  {
+    "id": "demo-line",
+    "text": "The live AI agent demo line is +1 813-491-3590 and answers 24/7.",
+    "source": "https://proplumnetwork.com/news/",
+    "tags": ["demo", "phone"]
+  },
+  {
+    "id": "stack-names",
+    "text": "The named ignorance-squared stack components are Laya (decision layer), NVIDIA NeMo (voice and language), and K3 Auditor (standing audit lane).",
+    "source": "https://proplumnetwork.com/ignorance-squared",
+    "tags": ["stack", "brands"]
+  }
+]
