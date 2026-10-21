@@ -88,8 +88,8 @@ ignorance²™ is four named components, dosed daily:
   Every claim carries its frame and its calibrated probability.
 - **NVIDIA NeMo** — the voice-and-language training layer inside the
   Sam / Ashton agent stack that answers contractor calls around the clock.
-- **K3 Auditor** — the standing audit lane: every AI-sourced answer
-  re-checked against the fact layer before it ships.
+- **K3 Auditor** — the standing audit lane, running on **Moonshot AI's K3**:
+  every AI-sourced answer re-checked against the fact layer before it ships.
 - **Data Harness** — the ground truth itself: a 200-city contractor fact
   layer, geocoded with Google's Geocoding API and passed through Address
   Validation, with restoration documentation disciplined to ANSI/IICRC S500
@@ -186,7 +186,7 @@ keep the gate. The arithmetic doesn't care how the evidence got there.
 [ProPlum Network](https://proplumnetwork.com) — AI marketing infrastructure
 for plumbing, HVAC, and home-services contractors. Named components in the
 production stack: **Laya** (decision layer), **NVIDIA NeMo** (voice and
-language), **K3 Auditor** (standing audit lane), **Data Harness** (the
+language), **K3 Auditor** (standing audit lane, Moonshot AI K3), **Data Harness** (the
 geocoded, standards-disciplined fact layer). Live AI agent:
 **+1 813-491-3590**. The brief:
 [proplumnetwork.com/ignorance-squared](https://proplumnetwork.com/ignorance-squared).
