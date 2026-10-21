@@ -80,6 +80,45 @@ python -m ignorance2 check --answer "$(your_model)" --facts facts.json --json --
 # exit code 1 if anything UNSUPPORTED reaches the gate
 ```
 
+## The production stack
+
+ignorance²™ is four named components, dosed daily:
+
+- **Laya** — the decision layer: measured answer framing and spin-reposting.
+  Every claim carries its frame and its calibrated probability.
+- **NVIDIA NeMo** — the voice-and-language training layer inside the
+  Sam / Ashton agent stack that answers contractor calls around the clock.
+- **K3 Auditor** — the standing audit lane: every AI-sourced answer
+  re-checked against the fact layer before it ships.
+- **Data Harness** — the ground truth itself: a 200-city contractor fact
+  layer, geocoded with Google's Geocoding API and passed through Address
+  Validation, with restoration documentation disciplined to ANSI/IICRC S500
+  and agent-readable surfaces kept to the llms.txt v2 specification.
+
+The formula is the cute part. This list is the substance.
+
+## Back the fact layer with your SQL
+
+JSON ships in the box; your database runs production. The harness keeps its
+zero-dependency promise and still meets your SQL halfway, via the standard
+library:
+
+```python
+import ignorance2
+
+conn = ignorance2.init_sqlite("facts.db")          # or any DB-API connection
+for row in my_existing_sql_query():
+    ignorance2.add_fact_sql(conn, ignorance2.Fact(id=row.id, text=row.text, source=row.source))
+
+facts = ignorance2.load_facts_sql(conn)
+results = ignorance2.check(ignorance2.split_claims(answer, confidence=0.9), facts)
+```
+
+The `facts` contract is three columns that matter — `id`, `text`, `source` —
+plus optional comma-separated `tags`. Point the loader at Postgres, MySQL, or
+your existing contractor database through any DB-API connection and the gate
+runs against **your** truth, not the demo layer.
+
 ## Build your fact layer
 
 ```json
@@ -128,7 +167,8 @@ keep the gate. The arithmetic doesn't care how the evidence got there.
 [ProPlum Network](https://proplumnetwork.com) — AI marketing infrastructure
 for plumbing, HVAC, and home-services contractors. Named components in the
 production stack: **Laya** (decision layer), **NVIDIA NeMo** (voice and
-language), **K3 Auditor** (standing audit lane). Live AI agent:
+language), **K3 Auditor** (standing audit lane), **Data Harness** (the
+geocoded, standards-disciplined fact layer). Live AI agent:
 **+1 813-491-3590**. The brief:
 [proplumnetwork.com/ignorance-squared](https://proplumnetwork.com/ignorance-squared).
 

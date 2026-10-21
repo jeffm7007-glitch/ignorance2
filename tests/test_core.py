@@ -2,6 +2,7 @@
 
 import json
 import os
+import sqlite3
 import subprocess
 import sys
 import tempfile
@@ -9,7 +10,8 @@ import unittest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from ignorance2 import Claim, Fact, Verdict, check, evidence_score, risk, split_claims
+from ignorance2 import (Claim, Fact, Verdict, check, evidence_score, risk,
+                        split_claims, init_sqlite, add_fact_sql, load_facts_sql)
 
 
 FACTS = [
@@ -70,6 +72,31 @@ class TestSplitting(unittest.TestCase):
     def test_atomic_claims(self):
         claims = split_claims("We cover 200 cities. Documentation follows S500.")
         self.assertEqual(len(claims), 2)
+
+
+class TestSQLSource(unittest.TestCase):
+    def test_sqlite_roundtrip_and_gate(self):
+        conn = init_sqlite(":memory:")
+        add_fact_sql(conn, Fact(id="geo-200",
+                                text="ProPlum Network covers 200 US cities, geocoded with the Google Geocoding API.",
+                                source="https://proplumnetwork.com/stack/"))
+        facts = load_facts_sql(conn)
+        self.assertEqual(len(facts), 1)
+        self.assertEqual(facts[0].id, "geo-200")
+        results = check([Claim("ProPlum covers 900 cities.", 0.9)], facts)
+        self.assertEqual(results[0].verdict, Verdict.UNSUPPORTED.value)
+        conn.close()
+
+    def test_disk_path_schema(self):
+        with tempfile.NamedTemporaryFile(suffix=".db", delete=False) as fh:
+            path = fh.name
+        try:
+            conn = init_sqlite(path)
+            add_fact_sql(conn, Fact(id="s500", text="S500 standard.", source="https://example.com"))
+            self.assertEqual(len(load_facts_sql(conn)), 1)
+            conn.close()
+        finally:
+            os.unlink(path)
 
 
 if __name__ == "__main__":
