@@ -15,6 +15,20 @@ Trademark pending. Code MIT. The name is ours; the arithmetic is everyone's.
 
 ---
 
+## News
+
+**2026-10-22 — the gate gets a decision engine.** The line-rate seat in the
+production stack now runs [Liquid AI's d1-ultra](https://www.liquid.ai/blog/d1-ultra)
+(released October 15, 2026): text and images in, calibrated probabilities out,
+one forward pass, **zero output tokens** — $0.042 per million input tokens.
+Auditing is a decision, not an essay; the gate's engine now has the auditor
+temperament, abstention as its failure mode. Moonshot AI's **K3 keeps the deep
+bench** for swarm-class generative jobs. Small gates fast, big gates deep —
+same formula on both seats. Full brief:
+[proplumnetwork.com/news/liquid-d1-ultra-gate](https://proplumnetwork.com/news/liquid-d1-ultra-gate).
+
+---
+
 ## Why
 
 Large language models generate confident, grammatical answers whether those
