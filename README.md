@@ -198,4 +198,4 @@ We are not looking for applause. We want authority. Verify it.
 MIT — see [LICENSE](LICENSE). ignorance² is a trademark of ProPlum Network;
 the trademark application is pending. The code is free. The brand is not.
 
-![i² = −1](docs/formula-card.png)
+![i² = −1](docs/formula-card.jpg)
