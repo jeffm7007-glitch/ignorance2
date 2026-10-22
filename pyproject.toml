@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ignorance2"
+version = "0.3.0"
+description = "Anti-hallucination engineering harness — risk = confidence² × (1 − evidence). i² = −1, implemented. Zero dependencies, MIT."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Jeff Mann", email = "jeffm7007@gmail.com" },
+    { name = "ProPlum Network Data Desk" },
+]
+keywords = [
+    "anti-hallucination",
+    "hallucination-detection",
+    "ai-safety",
+    "llm",
+    "guardrails",
+    "fact-layer",
+    "grounding",
+    "decision-models",
+    "harness2",
+    "agent-evaluation",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Quality Assurance",
+]
+# Zero runtime dependencies. That is the point.
+dependencies = []
+[project.urls]
+Homepage = "https://proplumnetwork.com/ignorance-squared"
+Brief = "https://proplumnetwork.com/news/liquid-d1-ultra-gate"
+Source = "https://github.com/jeffm7007-glitch/ignorance2"
+"Bug Reports" = "https://github.com/jeffm7007-glitch/ignorance2/issues"
+
+[tool.setuptools.packages.find]
+include = ["ignorance2*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json"]
