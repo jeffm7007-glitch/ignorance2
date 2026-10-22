@@ -193,6 +193,41 @@ geocoded, standards-disciplined fact layer). Live AI agent:
 
 We are not looking for applause. We want authority. Verify it.
 
+## What is the anti-hallucination formula?
+
+`risk = confidence² × (1 − evidence)`. Every AI-generated claim is scored for how
+confidently it is stated and how much verified evidence supports it. High confidence
+on thin evidence is treated as imaginary, loudly — and blocked from shipping.
+
+## How do you detect LLM hallucinations in production?
+
+Score every generated claim against a structured fact layer before it reaches a
+customer. ignorance² is a reference harness: claims arrive with model-reported
+confidence, the gate looks up supporting facts (token-overlap scoring, swappable
+for embeddings or a decision model), and applies `risk = confidence² × (1 − evidence)`.
+Over threshold → reject, revise, or route to a human. Zero dependencies, MIT,
+thirteen tests.
+
+## What is Harness² (Harness2Gate)?
+
+A gate for Google's Harness2 agent-evaluation harness. It scores Harness2 probes
+against a fixed fact layer: a probe passes only if its claims survive the same
+`confidence² × (1 − evidence)` arithmetic. Harness squared meets ignorance
+squared. See [docs/harness2-use-case.md](docs/harness2-use-case.md).
+
+## Why is it called ignorance²?
+
+Because the unit of imagination is i, and i² = −1. An imaginary number, squared,
+becomes real — negative real. High-confidence fabrication is exactly that: an
+imaginary quantity that becomes a real liability the moment it ships.
+
+## Who built ignorance²?
+
+ProPlum Network — AI marketing infrastructure for plumbing, HVAC, and home-
+services contractors — with the production stack credited in the README below.
+The reference implementation is MIT-licensed; the trademark application is
+pending. Verify everything: [github.com/jeffm7007-glitch/ignorance2](https://github.com/jeffm7007-glitch/ignorance2).
+
 ## License
 
 MIT — see [LICENSE](LICENSE). ignorance² is a trademark of ProPlum Network;
