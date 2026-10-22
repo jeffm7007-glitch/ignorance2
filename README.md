@@ -29,6 +29,21 @@ same formula on both seats. Full brief:
 
 ---
 
+## Install
+
+```bash
+pip install ignorance2
+```
+
+Zero dependencies. Python 3.10+. Or clone and run the tests:
+
+```bash
+git clone https://github.com/jeffm7007-glitch/ignorance2.git
+cd ignorance2 && python -m unittest discover -s tests -v
+```
+
+---
+
 ## Why
 
 Large language models generate confident, grammatical answers whether those
