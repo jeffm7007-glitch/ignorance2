@@ -1,16 +1,22 @@
-# Kanban Lead Machine — Laya decisions, K3 supervision (2026-10-24)
+# Kanban Lead Machine — Laya decisions, ignorance²-as-auditor (2026-10-24)
 
-The lead machine runs ON this repo's doctrine: Laya decides, K3 audits, the
-kanban directs. Slower than a swarm, accurate by construction. Quality over
-count — every lead gated before it ships.
+The lead machine runs ON this repo's doctrine: Laya decides, ignorance²
+audits, the kanban directs. Slower than a swarm, accurate by construction.
+Quality over count — every lead gated before it ships.
 
 ## Stack seats (from README doctrine)
 - **Laya** (decision layer) = `python3 -m ignorance2 check --facts <fact-layer> --strict`.
   Every outbound claim, every lead record, every SMS draft is split into atomic
   claims and gated. UNSUPPORTED never ships. Abstention is the failure mode.
-- **K3 Auditor** (standing audit lane) = `graded-audit` bench re-runs: sampled
-  station outputs re-checked against sources on a schedule; scorecards logged
-  in `bench-realdata/results-*.md` style.
+- **Our new auditor = ignorance² itself** (Jeff ruling 2026-10-23: "for
+  authority use our new auditor and the Google harness"): the harness auditing
+  claims through the multi-model panel — DeepSeek → Grok → Kimi → Gemini →
+  GLM-5 → Doubao → MiniMax → Claude → GPT — with sampled station outputs
+  re-checked against sources and scorecards logged. It already caught its own
+  claims-layer hallucination in public; that is the credential. K3 keeps only
+  the deep bench (Liquid d1-ultra staffs the line-rate gate).
+- **Google Harness²** (arXiv:2610.14224) = the authority anchor for
+  AI-sourced answers.
 - **Kanban** (Hermes ops) = board state in the workspace (`kanban-workers/`),
   cards move: backlog → running → review → done. One station per fire.
 
@@ -32,4 +38,4 @@ words, not ours), budget if stated, agency burned, and a gate verdict.
 Records failing the gate are quarantined, never deleted — the auditor reviews
 the quarantine.
 
-i² = −1. The gate decides; the bench supervises; the kanban remembers.
+i² = −1. The gate decides; the panel supervises; the kanban remembers.
